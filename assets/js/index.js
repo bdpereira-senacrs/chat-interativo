@@ -1,8 +1,8 @@
 import { quiz, courses } from "./quiz/index.js";
 import { title, message } from "./messages/index.js";
 
-const like = "/assets/imgs/thumbs-up-regular.svg";
-const deslike = "/assets/imgs/thumbs-down-regular.svg";
+const like = "./assets/imgs/thumbs-up-regular.svg";
+const deslike = "./assets/imgs/thumbs-down-regular.svg";
 
 const form = document.querySelector("#askForm");
 const chat = document.querySelector(".chat");
