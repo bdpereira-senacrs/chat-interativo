@@ -86,7 +86,7 @@ const yes = (e) => {
     desc = true;
     selectAsk(" ");
   }
-  chat.scrollBy(0, chat.scrollHeight);
+  chat.scrollTo(0, chat.scrollHeight + 10);
 };
 const no = (e) => {
   document
@@ -126,7 +126,7 @@ const no = (e) => {
       endGame = true;
     });
   }
-  chat.scrollBy(0, chat.scrollHeight);
+  chat.scrollTo(0, chat.scrollHeight + 10);
 };
 
 const endChat = () => {
@@ -252,7 +252,7 @@ const typewriterEffect = (element, str, speed = 50) => {
       }
       if (endGame) fadeIn(restartGame, null, 1000);
       k = 0;
-      chat.scrollBy(0, chat.scrollHeight);
+      chat.scrollTo(0, chat.scrollHeight + 10);
       return;
     }
 
@@ -281,7 +281,7 @@ const typewriterEffect = (element, str, speed = 50) => {
     }
 
     element.innerHTML = tempHTML + '<span class="cursor">|</span>'; // Show cursor
-    chat.scrollBy(0, chat.scrollHeight);
+    chat.scrollTo(0, chat.scrollHeight + 10);
     setTimeout(type, speed);
   };
 
@@ -370,7 +370,7 @@ const selectAsk = (response, answer = false) => {
       i--;
     });
   }
-  chat.scrollBy(0, chat.scrollHeight);
+  chat.scrollTo(0, chat.scrollHeight + 10);
 };
 
 form.addEventListener("submit", (e) => {
@@ -398,7 +398,7 @@ form.addEventListener("submit", (e) => {
     } else {
       selectAsk("false", false);
     }
-    chat.scrollBy(0, chat.scrollHeight);
+    chat.scrollTo(0, chat.scrollHeight + 10);
     input.value = "";
     input.focus();
   }
