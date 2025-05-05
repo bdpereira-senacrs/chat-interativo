@@ -252,6 +252,7 @@ const typewriterEffect = (element, str, speed = 50) => {
       }
       if (endGame) fadeIn(restartGame, null, 1000);
       k = 0;
+      chat.scrollTo(0, chat.scrollHeight);
       return;
     }
 
