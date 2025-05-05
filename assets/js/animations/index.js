@@ -25,6 +25,7 @@ export const fadeIn = (el, compare = null, delay = 500) => {
       el.animate(animate, animateConfig);
     });
   }
+  el.classList.remove("d-none");
 };
 
 export const fadeOut = (el, compare = null, delay = 500) => {

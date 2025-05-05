@@ -382,8 +382,8 @@ form.addEventListener("submit", (e) => {
       `<div class="message user">${input.value}</div>`
     );
     const value = input.value.toLocaleLowerCase();
-    i = 15;
-    end = true;
+    // i = 15;
+    // end = true;
     if (i == 0) {
       chat.classList.remove("init");
       selectAsk(value);
