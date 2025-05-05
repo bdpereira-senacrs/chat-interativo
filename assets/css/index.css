@@ -45,6 +45,7 @@ body {
   align-items: center;
   width: 1084px;
   height: 100%;
+  max-height: 100%;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.612) 0%,
@@ -122,16 +123,12 @@ body {
           .option {
             cursor: pointer;
             border-bottom: 2px dotted transparent;
-            width: max-content;
             transition: 0.5s ease-in-out;
             &.disabled {
               pointer-events: none;
             }
             &:hover {
               border-bottom: 2px dotted #00498f;
-            }
-            @media (max-width: 991px) {
-              width: 85%;
             }
           }
           .btns {
