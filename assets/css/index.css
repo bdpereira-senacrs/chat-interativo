@@ -10,7 +10,6 @@
 ::-webkit-scrollbar-thumb {
   background-color: rgba(20, 125, 224, 0.52);
 }
-/* HTML: <div class="loader"></div> */
 
 body {
   display: grid;
@@ -78,6 +77,25 @@ body {
     .header {
       width: 100%;
       padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      .link {
+        padding: 10px;
+        border-radius: 3px;
+        border: 2px solid #00498f;
+      }
+    }
+    .btnRestart {
+      width: auto;
+      padding: 10px 40px;
+      align-self: center;
+      border-radius: 3px;
+      border: 2px solid #00498f;
+      background-color: transparent;
+      color: #00498f;
+      font-size: 16px;
+      cursor: pointer;
     }
     .chat {
       width: 100%;
@@ -92,6 +110,7 @@ body {
       @media (max-width: 991px) {
         padding: 10px 10px;
       }
+
       &.init {
         flex-direction: row;
         justify-content: center;
@@ -100,6 +119,18 @@ body {
       .message {
         width: 85%;
         &.bot {
+          .option {
+            cursor: pointer;
+            border-bottom: 2px dotted transparent;
+            width: max-content;
+            transition: 0.5s ease-in-out;
+            &.disabled {
+              pointer-events: none;
+            }
+            &:hover {
+              border-bottom: 2px dotted #00498f;
+            }
+          }
           .btns {
             display: flex;
             gap: 25px;
@@ -109,19 +140,25 @@ body {
               cursor: pointer;
               color: transparent;
               font-size: 1px;
-            }
-            img {
-              width: 30px;
-              height: auto;
-              &:hover {
-                filter: brightness(0.8);
+              &.disabled {
+                pointer-events: none;
               }
+            }
+          }
+          img {
+            width: 30px;
+            height: auto;
+            &:hover {
+              filter: brightness(0.8);
             }
           }
           h3 {
             color: #00498f;
           }
-          &:not(.writing) {
+          &.writing {
+            padding: 0 0 150px 0;
+          }
+          &:not(.loading) {
             display: flex;
             flex-direction: column;
             gap: 25px;
@@ -221,6 +258,10 @@ body {
       }
     }
   }
+}
+
+.d-none {
+  display: none;
 }
 
 .writer {

@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/index.css" />
-    <script
-      src="https://kit.fontawesome.com/60ef12384d.js"
-      crossorigin="anonymous"
-    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -15,14 +11,20 @@
       <div class="containerDialog">
         <header class="header">
           <img
-            class="logo"
+            class="logo d-none"
             src="./assets/imgs/logo-senac.svg"
             alt="Logo Senac"
           />
+          <a
+            class="link d-none"
+            href="https://www.ead.senac.br/cursos-tecnicos/"
+            target="_blank"
+            >Acessar ead.senac.br</a
+          >
         </header>
 
         <div class="chat init">
-          <div class="message title bot">
+          <div class="message title bot d-none">
             <h1 class="title">
               Qual curso técnico combina<br />
               com você?
@@ -30,8 +32,9 @@
             <h2 class="subtitle">Vamos descobrir?</h2>
           </div>
         </div>
+        <button class="btnRestart d-none">Reiniciar</button>
         <div class="ask">
-          <form id="askForm">
+          <form id="askForm" class="d-none">
             <input
               class="field"
               type="text"
