@@ -130,6 +130,9 @@ body {
             &:hover {
               border-bottom: 2px dotted #00498f;
             }
+            @media (max-width: 991px) {
+              width: 85%;
+            }
           }
           .btns {
             display: flex;
@@ -156,7 +159,7 @@ body {
             color: #00498f;
           }
           &.writing {
-            padding: 0 0 150px 0;
+            padding: 0 0 300px 0;
           }
           &:not(.loading) {
             display: flex;
