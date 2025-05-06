@@ -287,7 +287,7 @@ const typewriterEffect = (element, str, speed = 50) => {
     }
 
     element.innerHTML = tempHTML + '<span class="cursor">|</span>'; // Show cursor
-    chat.scrollTo(0, chat.scrollHeight + chat.scrollTop);
+    chat.scrollTo(0, chat.scrollHeight * 2);
 
     setTimeout(type, speed);
   };
