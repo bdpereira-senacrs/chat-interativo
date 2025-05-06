@@ -86,6 +86,7 @@ const yes = (e) => {
     desc = true;
     selectAsk(" ");
   }
+  chat.scroll(0, chat.scrollHeight + chat.scrollTop);
 };
 const no = (e) => {
   document
@@ -125,6 +126,7 @@ const no = (e) => {
       endGame = true;
     });
   }
+  chat.scroll(0, chat.scrollHeight + chat.scrollTop);
 };
 
 const endChat = () => {
@@ -204,6 +206,7 @@ const typewriterEffect = (element, str, speed = 50) => {
     if (cursor >= originalHTML.length) {
       // Clear the cursor after typing is complete
       element.innerHTML = tempHTML; // Set the final content without the cursor
+
       send.removeAttribute("disabled");
       send.classList.remove("disabled");
       input.removeAttribute("disabled");
@@ -250,7 +253,7 @@ const typewriterEffect = (element, str, speed = 50) => {
       }
       if (endGame) fadeIn(restartGame, null, 1000);
       k = 0;
-
+      chat.scroll(0, chat.scrollHeight + chat.scrollTop);
       return;
     }
 
@@ -279,7 +282,7 @@ const typewriterEffect = (element, str, speed = 50) => {
     }
 
     element.innerHTML = tempHTML + '<span class="cursor">|</span>'; // Show cursor
-
+    chat.scroll(0, chat.scrollHeight + chat.scrollTop);
     setTimeout(type, speed);
   };
 
@@ -368,6 +371,7 @@ const selectAsk = (response, answer = false) => {
       i--;
     });
   }
+  chat.scroll(0, chat.scrollHeight + chat.scrollTop);
 };
 
 form.addEventListener("submit", (e) => {
@@ -395,22 +399,8 @@ form.addEventListener("submit", (e) => {
     } else {
       selectAsk("false", false);
     }
-
+    chat.scroll(0, chat.scrollHeight + chat.scrollTop);
     input.value = "";
     input.focus();
   }
 });
-
-const config = { attributes: true, childList: true, subtree: true };
-
-const callback = (mutationList, observer) => {
-  for (const mutation of mutationList) {
-    if (mutation) {
-      chat.scroll(0, chat.scrollHeight);
-    }
-  }
-};
-
-const observer = new MutationObserver(callback);
-
-observer.observe(chat, config);
