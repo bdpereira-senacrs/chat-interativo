@@ -6,6 +6,9 @@
   font-family: sans-serif;
   scroll-behavior: smooth;
   text-decoration: none;
+  @media (max-width: 991px) {
+    scroll-behavior: unset;
+  }
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgba(20, 125, 224, 0.52);
