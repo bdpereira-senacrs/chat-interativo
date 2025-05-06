@@ -5,6 +5,7 @@ import { fadeIn, fadeOut } from "./animations/index.js";
 const like = "./assets/imgs/thumbs-up-regular.svg";
 const deslike = "./assets/imgs/thumbs-down-regular.svg";
 
+const containerDialog = document.querySelector(".containerDialog");
 const form = document.querySelector("#askForm");
 const chat = document.querySelector(".chat");
 const input = form.querySelector(".field");
@@ -34,6 +35,10 @@ fadeIn(form, null, 3000);
 restartGame.addEventListener("click", (e) => {
   location.reload();
 });
+
+if (window.matchMedia("(max-width: 991px)").matches) {
+  containerDialog.style.height = window.innerHeight;
+}
 
 const slugify = (str) => {
   str = str
