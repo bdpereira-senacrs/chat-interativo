@@ -114,7 +114,21 @@ body {
       @media (max-width: 991px) {
         padding: 10px 10px;
       }
-
+      .btnStart {
+        width: auto;
+        padding: 10px 40px;
+        align-self: center;
+        border-radius: 3px;
+        border: 2px solid #00498f;
+        background-color: transparent;
+        color: #00498f;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          filter: brightness(0);
+        }
+      }
       &.init {
         flex-direction: row;
         justify-content: center;

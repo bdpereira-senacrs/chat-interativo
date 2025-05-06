@@ -5,7 +5,7 @@ import { fadeIn, fadeOut } from "./animations/index.js";
 const like = "./assets/imgs/thumbs-up-regular.svg";
 const deslike = "./assets/imgs/thumbs-down-regular.svg";
 
-const containerDialog = document.querySelector(".containerDialog");
+const btnStart = document.querySelector(".btnStart");
 const form = document.querySelector("#askForm");
 const chat = document.querySelector(".chat");
 const input = form.querySelector(".field");
@@ -36,9 +36,11 @@ restartGame.addEventListener("click", (e) => {
   location.reload();
 });
 
-// if (window.matchMedia("(max-width: 991px)").matches) {
-//   containerDialog.style.height = window.innerHeight;
-// }
+btnStart.addEventListener("click", (e) => {
+  e.preventDefault();
+  fadeOut(btnStart, null, 500);
+  send.click();
+});
 
 const slugify = (str) => {
   str = str
