@@ -57,6 +57,7 @@ body {
   padding: 11px 9px;
   @media (max-width: 991px) {
     width: 100%;
+    height: auto;
     border-radius: 0;
     padding: 0;
   }
