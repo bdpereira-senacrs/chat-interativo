@@ -72,7 +72,7 @@ body {
     flex-direction: column;
     @media (max-width: 991px) {
       width: 100%;
-      height: 100vh;
+      height: calc(100vh - 116px - 77px);
       border-radius: 0;
     }
     .header {
@@ -158,9 +158,9 @@ body {
           }
           &.writing {
             padding: 0 0 150px 0;
-            @media (max-width: 991px) {
+            /* @media (max-width: 991px) {
               padding: 0;
-            }
+            } */
           }
           &:not(.loading) {
             display: flex;
