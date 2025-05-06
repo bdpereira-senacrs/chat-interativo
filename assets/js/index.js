@@ -36,9 +36,9 @@ restartGame.addEventListener("click", (e) => {
   location.reload();
 });
 
-if (window.matchMedia("(max-width: 991px)").matches) {
-  containerDialog.style.height = window.innerHeight;
-}
+// if (window.matchMedia("(max-width: 991px)").matches) {
+//   containerDialog.style.height = window.innerHeight;
+// }
 
 const slugify = (str) => {
   str = str
