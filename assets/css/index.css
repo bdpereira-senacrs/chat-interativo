@@ -75,7 +75,7 @@ body {
     flex-direction: column;
     @media (max-width: 991px) {
       width: 100%;
-      height: calc(90vh - 77px);
+      height: 90vh;
       border-radius: 0;
     }
     .header {
