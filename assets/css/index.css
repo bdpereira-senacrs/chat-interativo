@@ -36,6 +36,7 @@ body {
   }
   @media (max-width: 991px) {
     width: 100%;
+    place-items: unset;
     padding: 0;
   }
 }
@@ -101,7 +102,7 @@ body {
       padding: 10px 12%;
       overflow: auto;
       display: flex;
-      height: calc(100% - 116px - 77px);
+      height: calc(90vh - 116px - 77px);
       border-radius: 5px 5px 0 0;
       flex-direction: column;
       gap: 10px;
