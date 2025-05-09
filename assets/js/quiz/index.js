@@ -5,6 +5,7 @@ export const courses = [
     name: "Técnico em Administração",
     desc: "<p>O profissional administrativo tem amplas possibilidades no mercado de trabalho!Com a duração de 12 meses, o curso Técnico em Administração capacita você a executar atividades administrativas relacionadas aos processos de gestão de pessoas, de operações logísticas, gestão de materiais e patrimônio, de marketing, de vendas e de finanças.</p><p>Atua em organizações públicas e privadas de segmentos variados, tais como das áreas de comércio, de serviços, da indústria, de consultoria, de ensino e pesquisa, relacionando-se com equipes de diversos setores da organização, por meio da prestação de serviços autônomos, temporários ou contrato efetivo.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-administracao-novo/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/DbyeXgRjPbE" title="Técnico em Administração" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const courses = [
     name: "Técnico em Contabilidade",
     desc: "<p>O curso Técnico em Contabilidade do Senac EAD tem duração de 10 meses e prepara você para atuar na área contábil, sob a supervisão de um contador que tenha o registro profissional ativo junto ao Conselho Regional de Contabilidade (CRC).</p><p>Neste curso, você aprenderá a auxiliar em rotinas trabalhistas, fiscais e patrimoniais, além de lidar com temas como custos, contratos, tributos, previdência e ajudar na elaboração de documentos contábeis e financeiros.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-contabilidade/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/UE-6Q3Kvd3s" title="Técnico em Contabilidade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const courses = [
     name: "Técnico em Design de Interiores",
     desc: "<p>O mercado de trabalho para o designer de interiores é amplo. Esse profissional pode optar por trabalhar tanto no regime CLT como autônomo.</p><p>Com a duração de 18 meses, o curso Técnico em Design de Interiores prepara você para elaborar, projetar e acompanhar a execução de projetos de interiores de espaços residenciais, comerciais, institucionais, promocionais e vendas especializadas. Além disso, você aprende a utilizar ferramentas como Promob, SketchUP, AutoCAD, Dialux e Gimp, para desenvolver os seus projetos.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-design-de-interiores-novo/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/ReVzIiOvi9c" title="Técnico em Design de Interiores" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const courses = [
     name: "Técnico em Secretariado",
     desc: "<p>Com as operações cada vez mais complexas nas corporações, ter um profissional capacitado que assessore e planeje as demandas da rotina empresarial é fundamental para o bom desenvolvimento das organizações.</p><p>Com a duração de apenas 11 meses, o curso Técnico em Secretariado capacita você a desempenhar atividades como planejamento e implementação de estratégias relacionadas à área de atuação; assessoramento de demandas relativas à gestão em diferentes níveis hierárquicos; capacitação para se tornar um elo entre os dirigentes da empresa e os demais setores; gerenciamento de agenda, gestão de viagens, redação de documentos, planejamento e organização de eventos, atendimento, elaboração de planilhas e orçamentos.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-secretariado/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/31YK-sfyivU" title="Técnico em Secretariado" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const courses = [
     name: "Técnico em Recursos Humanos",
     desc: "<p>Atualmente, devido às diversas transformações no contexto de trabalho, a valorização do profissional e um excelente clima organizacional são fatores fundamentais para o bom funcionamento de uma empresa.</p><p>A área de recursos humanos está em constante crescimento e ganhando cada vez mais relevância nas organizações. Para tanto, ela vem sendo desafiada a encontrar profissionais competentes, além de elaborar estratégias de estímulo aos colaboradores, para que se mantenham atualizados e estejam alinhados com a cultura organizacional.</p><p>Com a duração de 12 meses, o curso Técnico em Recursos Humanos prepara você para ser peça fundamental para a entrega de resultados na gestão de pessoas. Este profissional é responsável pelo desenvolvimento dos colaboradores e executa treinamentos internos, recrutamento e seleção, plano de carreira, cargos e salários, clima organizacional, relações trabalhistas, avaliação de desempenho e ambiente organizacional.</p><p>Ainda realiza atividades referentes ao sistema de informações de pessoal, auxiliando no cálculo de folha de pagamento, no controle de benefícios e nos procedimentos para admissão, movimentação e demissão de empregados, atuando em conformidade com a legislação vigente.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-recursos-humanos/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/O0A7Kn-ErYc" title="Técnico em Recursos Humanos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ export const courses = [
     name: "Técnico em Desenvolvimento de Sistemas",
     desc: "<p>A crescente demanda na área da Tecnologia da Informação (TI) aqueceu o mercado de trabalho para os profissionais qualificados neste segmento. Por consequência, a busca por cursos técnicos na área de TI disparou consideravelmente, pelas oportunidades e boa remuneração.</p><p>Com duração de 21 meses, o curso Técnico em Desenvolvimento de Sistemas prepara você a exercer funções técnicas, como: administração do sistema de banco de dados, desenvolver software, programar rotinas de sistema utilizando linguagens e técnicas de programação, programação de sistemas para desktop e para web, entre outras atividades. Todo conhecimento adquirido é comprovado pelo diploma do Senac, que é reconhecido nacionalmente e entregue a você após conclusão do curso</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-desenvolvimento-de-sistemas/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/vIRCb-mXZG0" title="Técnico em Desenvolvimento de Sistemas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 7,
@@ -47,6 +53,7 @@ export const courses = [
     name: "Técnico em Qualidade",
     desc: "<p>O curso Técnico em Qualidade capacita você para liderar as rápidas transformações e demandas crescentes da área. O curso lhe fornece as habilidades e os conhecimentos necessários para que você garanta padrões elevados de qualidade em todos os aspectos operacionais. Valorizado pelas empresas como um agente estratégico, o técnico em qualidade desempenha um papel fundamental na otimização de processos, na redução de custos e na satisfação do cliente. Seja parte desta transformação e destaque-se como um profissional indispensável no mercado atual.</p><p>Com a duração de 12 meses, o curso Técnico em Qualidade visa fornecer uma base sólida de conhecimento na área da qualidade, abrangendo aspectos teóricos e práticos da gestão da qualidade e suas bases tecnológicas. Ele prepara você para enfrentar os desafios de um mercado competitivo e para ser capaz de atuar como agente de mudança na cultura organizacional, estabelecendo a qualidade como fator-chave para o sucesso empresarial. Os conteúdos capacitam-no a promover a qualidade de produtos, processos e serviços, garantindo a melhoria contínua destes. Você estará preparado para liderar iniciativas de qualidade, contribuindo para o sucesso e crescimento das organizações.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-qualidade-eadnovo/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/gryqKhZDnO0" title="Técnico em Qualidade" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 8,
@@ -54,6 +61,7 @@ export const courses = [
     name: "Técnico em Logística",
     desc: "<p>Com o aumento das demandas logísticas, devido às novas formas de consumo, principalmente por meio digital, a logística tem tomado maiores proporções e complexidades no mercado. Diante disso, você que pretende atuar na área precisa estar capacitado para executar as atividades relacionadas às funções, bem como saber se destacar no concorrido mercado de trabalho.</p><p>Com a duração de apenas 12 meses, o curso Técnico em Logística ensina você as competências de apoio ao planejamento e ao gerenciamento das instalações e das operações da cadeia de logística no âmbito das organizações, buscando a redução de custos e melhorando a qualidade dos processos logísticos de armazenagem, transporte e distribuição de produtos</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-logistica-novo/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/_dNYEg-Uv5Q" title="Técnico em Logística" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 9,
@@ -61,6 +69,7 @@ export const courses = [
     name: "Técnico em Meio Ambiente",
     desc: "<p>Em tempos em que o termo, socioambiental, toma espaço nas discussões políticas e nas organizações de forma globalizada, o profissional do meio ambiente é requisitado pelo mercado de trabalho para atender a demandas em diversos setores.</p><p>Com a duração de 15 meses, o curso Técnico em Meio Ambiente capacita você com o conhecimento necessário para ser o/a profissional responsável pelo levantamento e pela sistematização de dados, informações e documentos técnicos para subsidiar a realização de estudos socioambientais. Além dessas atribuições, você estará apto a contribuir no processo de elaboração de políticas ambientais, na implementação e no controle de programas de gerenciamento ambiental e sistemas de gestão integrada.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-meio-ambiente-novo/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/73KMfOnasJI" title="Técnico em Meio Ambiente" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 10,
@@ -68,6 +77,7 @@ export const courses = [
     name: "Técnico em Transações Imobiliárias",
     desc: "<p>O mercado imobiliário é um dos mais promissores no país. Com mudanças constantes, estar qualificado é o diferencial para quem quer se destacar no mercado de trabalho e fechar bons negócios. Para quem está disposto a transformar vidas, o curso Técnico em Transações Imobiliárias do Senac é o caminho certo.</p><p>Com duração de apenas 10 meses, o curso Técnico em Transações Imobiliárias possibilita o registro profissional no CRECI, após a conclusão, e prepara você para atuar em empresas do setor imobiliário, construção civil, urbanizadoras, loteadoras, agentes financeiros, empresas prestadoras de serviços, empresas privadas e também como profissionais liberais.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-transacoes-imobiliarias/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/CV5MvoZejn8" title="Técnico em Transações Imobiliárias" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 11,
@@ -75,6 +85,7 @@ export const courses = [
     name: "Técnico em Segurança do Trabalho",
     desc: "<p>Profissionais da área de segurança do trabalho são muito requisitados no mercado de trabalho e essenciais para garantir a segurança dos colaboradores e evitar acidentes.</p><p>Além disso, as chances de empregabilidade na área são altas para esses profissionais, devido à Portaria n.º 3.214, de 1978, que define que todos os órgãos e as empresas privadas e públicas que contem com empregados regidos pela Consolidação das Leis do Trabalho (CLT) devem manter, obrigatoriamente, serviços especializados em engenharia de segurança e em medicina do trabalho. Assim, a depender do grau de risco e da quantidade de trabalhadores, é imprescindível a presença do profissional técnico em segurança do trabalho.</p><p>Com a duração de 18 meses, o curso Técnico em Segurança do Trabalho capacita você a ser o profissional responsável por analisar e avaliar o ambiente de trabalho, as instalações e os processos laborais, visando à prevenção de incidentes, acidentes e doenças ocupacionais e adotando, assim, medidas de controle de riscos ocupacionais por meio de ações, programas de saúde e segurança do trabalho, para eliminar os possíveis riscos que possam prejudicar o trabalhador.</p>",
     link: "https://www.ead.senac.br/cursos-tecnicos/tecnico-em-seguranca-do-trabalho/",
+    video: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/GQiRjtSHyF8" title="Técnico em Segurança do Trabalho" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
   },
   {
     id: 12,
@@ -82,6 +93,7 @@ export const courses = [
     name: "Técnico em Empreendedorismo",
     desc: "",
     link: "",
+    video: ``,
   },
 ];
 

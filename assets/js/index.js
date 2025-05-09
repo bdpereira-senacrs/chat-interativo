@@ -13,7 +13,8 @@ const send = form.querySelector(".send");
 const btnSenac = document.querySelector(".header .link");
 const restartGame = document.querySelector(".btnRestart");
 const loading = '<div class="writer"></div>';
-
+input.value = "Sim!";
+input.setAttribute("readonly", true);
 const logo = document.querySelector(".logo");
 const initMessage = chat.querySelector(".message.title");
 let i = 0,
@@ -21,9 +22,7 @@ let i = 0,
   k = 0;
 let desc = true,
   end = false,
-  restart = false,
   endGame = false;
-let finalCourse;
 const answers = ["a", "b", "c", "d"];
 
 fadeIn(logo, null, 1000);
@@ -38,7 +37,6 @@ restartGame.addEventListener("click", (e) => {
 
 btnStart.addEventListener("click", (e) => {
   e.preventDefault();
-  fadeOut(btnStart, null, 500);
   send.click();
 });
 
@@ -53,138 +51,30 @@ const slugify = (str) => {
   return str;
 };
 
-const yes = (e) => {
-  document
-    .querySelectorAll(".yes")
-    .forEach((el) => el.classList.add("disabled"));
-  document
-    .querySelectorAll(".no")
-    .forEach((el) => el.classList.add("disabled"));
-  const last =
-    chat.querySelectorAll(".writing")[
-      chat.querySelectorAll(".writing").length - 1
-    ];
-
-  if (last) last.classList.remove("writing");
-  chat.insertAdjacentHTML(
-    "beforeend",
-    `<div class="message user"><img src="${like}" /></div>`
-  );
-  if (!restart) {
-    let str = "";
-    str = `<p><strong>🚀🚀 Muito bem!</strong> Muito obrigado pelo seu tempo, Aqui está o link para o curso, espero que você goste: 😁</p>`;
-    str += `<p>👉 <a target="_blank" href="${finalCourse.link}">${finalCourse.link}</a> 👈</p>`;
-    chat.insertAdjacentHTML(
-      "beforeend",
-      `<div class="message bot writing"></div>`
-    );
-    const botMessage =
-      chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
-    botMessage.insertAdjacentHTML("beforeend", loading);
-    botMessage.classList.add("loading");
-    const loadingEl = botMessage.querySelector(".writer");
-    loadingEl.addEventListener("animationend", (e) => {
-      botMessage.classList.remove("loading");
-
-      typewriterEffect(botMessage, str, 10);
-      endGame = true;
-    });
-  } else {
-    desc = true;
-    selectAsk(" ");
-  }
-  chat.scrollTo(0, chat.scrollHeight);
-};
-const no = (e) => {
-  document
-    .querySelectorAll(".yes")
-    .forEach((el) => el.classList.add("disabled"));
-  document
-    .querySelectorAll(".no")
-    .forEach((el) => el.classList.add("disabled"));
-  const last =
-    chat.querySelectorAll(".writing")[
-      chat.querySelectorAll(".writing").length - 1
-    ];
-
-  if (last) last.classList.remove("writing");
-  chat.insertAdjacentHTML(
-    "beforeend",
-    `<div class="message user"><img src="${deslike}" /></div>`
-  );
-  if (!restart) endChat();
-  if (restart) {
-    let str = "";
-    str = `<p><strong>🥺 Entendo!</strong> Muito obrigado pelo seu tempo 😊, caso queira procurar outro curso aqui está o link para a lista de cursos:</p>`;
-    str += `<p>👉 <a href="https://www.ead.senac.br/cursos-tecnicos/">https://www.ead.senac.br/cursos-tecnicos/</a> 👈</p>`;
-    chat.insertAdjacentHTML(
-      "beforeend",
-      `<div class="message bot writing"></div>`
-    );
-    const botMessage =
-      chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
-    botMessage.insertAdjacentHTML("beforeend", loading);
-    botMessage.classList.add("loading");
-    const loadingEl = botMessage.querySelector(".writer");
-    loadingEl.addEventListener("animationend", (e) => {
-      botMessage.classList.remove("loading");
-
-      typewriterEffect(botMessage, str, 10);
-      endGame = true;
-    });
-  }
-  chat.scrollTo(0, chat.scrollHeight);
-};
-
 const endChat = () => {
   let str = "";
   input.setAttribute("disabled", true);
-  if (j < 3) {
-    const auxCourses = courses.sort((a, b) => b.score - a.score);
-    str = `<p><strong>${
-      j == 0 ? "😁 Muito Bem" : "😥 Entendo"
-    }!</strong> De acordo com suas respostas, o ${
-      j == 0 ? "" : j == 1 ? "segundo" : "terceiro"
-    } curso mais indicado é:</p>`;
+  const auxCourses = courses.sort((a, b) => b.score - a.score);
+  if (j == 0)
+    str = `<p>De acordo com suas respostas, os cursos mais indicados são:</p>`;
+  str += `<h3>${j + 1}º - 🚀 <a target="_blank" href="${auxCourses[j].link}">${
+    auxCourses[j].name
+  }</a> 🚀</h3>`;
+  str += `${auxCourses[j].video}`;
+  str += `<p>${auxCourses[j].desc}</p>`;
+  str += `<a class="link btnAnim" target="_blank" href="${auxCourses[j].link}">👉 Acessar ${auxCourses[j].name} 👈</a>`;
+  chat.insertAdjacentHTML("beforeend", `<div class="message bot end"></div>`);
+  const botMessage =
+    chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
+  botMessage.insertAdjacentHTML("beforeend", loading);
+  botMessage.classList.add("loading");
+  const loadingEl = botMessage.querySelector(".writer");
+  loadingEl.addEventListener("animationend", (e) => {
+    botMessage.classList.remove("loading");
 
-    str += `<h3>🚀 <a target="_blank" href="${auxCourses[j].link}">${auxCourses[j].name}</a> 🚀</h3>`;
-    str += `<p>Pode acessar mais informações do curso aqui <br>👉 <a target="_blank" href="${auxCourses[j].link}">${auxCourses[j].link}</a> 👈</p>`;
-    str += `<p>${auxCourses[j].desc}</p>`;
-    str += `<div class="btns"><button class="yes"><img src="${like}" />Gostei</button><button class="no"><img src="${deslike}" />Não Gostei</button></div>`;
-    finalCourse = auxCourses[j];
-    chat.insertAdjacentHTML(
-      "beforeend",
-      `<div class="message bot writing"></div>`
-    );
-    const botMessage =
-      chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
-    botMessage.insertAdjacentHTML("beforeend", loading);
-    botMessage.classList.add("loading");
-    const loadingEl = botMessage.querySelector(".writer");
-    loadingEl.addEventListener("animationend", (e) => {
-      botMessage.classList.remove("loading");
-
-      typewriterEffect(botMessage, str, 10);
-      j++;
-    });
-  } else {
-    str = `<p><strong>😥 Entendo!</strong> Acredito que você não tenha sido muito <strong>honesto</strong> podemos fazer as perguntas novamente?</p>`;
-    str += `<div class="btns"><button class="yes"><img src="${like}" />Gostei</button><button class="no"><img src="${deslike}" />Não Gostei</button></div>`;
-    chat.insertAdjacentHTML(
-      "beforeend",
-      `<div class="message bot writing"></div>`
-    );
-    const botMessage =
-      chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
-    botMessage.insertAdjacentHTML("beforeend", loading);
-    botMessage.classList.add("loading");
-    const loadingEl = botMessage.querySelector(".writer");
-    loadingEl.addEventListener("animationend", (e) => {
-      botMessage.classList.remove("loading");
-      typewriterEffect(botMessage, str, 10);
-      restart = true;
-    });
-  }
+    typewriterEffect(botMessage, str, 10);
+    if (j == 2) endGame = true;
+  });
 };
 
 const typewriterEffect = (element, str, speed = 50) => {
@@ -238,27 +128,18 @@ const typewriterEffect = (element, str, speed = 50) => {
         selectAsk(" ", false);
       }
       if (end) {
-        input.setAttribute("disabled", true);
-        const btnsYes = document.querySelectorAll(`.yes`);
-        const btnYes = btnsYes[btnsYes.length - 1];
-        btnYes.addEventListener("click", yes);
-
-        const btnsNo = document.querySelectorAll(`.no`);
-        const btnNo = btnsNo[btnsNo.length - 1];
-        btnNo.addEventListener("click", no);
+        fadeIn(
+          botMessages[botMessages.length - 1].querySelector("iframe"),
+          null,
+          1000,
+          chat
+        );
+        j++;
+        if (j < 3) endChat();
       }
-      if (restart) {
-        i = 0;
-        courses.forEach((c) => (c.score = 0));
-        const btnsYes = document.querySelectorAll(`.yes`);
-        const btnYes = btnsYes[btnsYes.length - 1];
-        btnYes.addEventListener("click", yes);
-
-        const btnsNo = document.querySelectorAll(`.no`);
-        const btnNo = btnsNo[btnsNo.length - 1];
-        btnNo.addEventListener("click", no);
+      if (endGame) {
+        fadeIn(restartGame, null, 1000);
       }
-      if (endGame) fadeIn(restartGame, null, 1000);
       k = 0;
       chat.scrollTo(0, chat.scrollHeight);
       return;
@@ -302,12 +183,7 @@ const selectAsk = (response, answer = false) => {
   input.setAttribute("disabled", true);
   send.setAttribute("disabled", true);
   send.classList.add("disabled");
-  const last =
-    chat.querySelectorAll(".writing")[
-      chat.querySelectorAll(".writing").length - 1
-    ];
 
-  if (last) last.classList.remove("writing");
   if (answer) {
     const ops = quiz[i - 1].options.find((op) => op.id == response).courses;
     courses.forEach((c) => {
@@ -317,10 +193,7 @@ const selectAsk = (response, answer = false) => {
     });
   }
   if (desc) {
-    chat.insertAdjacentHTML(
-      "beforeend",
-      `<div class="message bot writing"></div>`
-    );
+    chat.insertAdjacentHTML("beforeend", `<div class="message bot"></div>`);
     const botMessage =
       chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
     botMessage.insertAdjacentHTML("beforeend", loading);
@@ -335,7 +208,7 @@ const selectAsk = (response, answer = false) => {
   if (response != "" && i < quiz.length && !desc && response != "false") {
     chat.insertAdjacentHTML(
       "beforeend",
-      `<div class="message bot ${i === 0 ? "first" : ""} writing" ></div>`
+      `<div class="message bot ${i === 0 ? "first" : ""}" ></div>`
     );
     const botMessage =
       chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
@@ -359,10 +232,7 @@ const selectAsk = (response, answer = false) => {
   }
   if (response == "false") {
     desc = true;
-    chat.insertAdjacentHTML(
-      "beforeend",
-      `<div class="message bot writing" ></div>`
-    );
+    chat.insertAdjacentHTML("beforeend", `<div class="message bot" ></div>`);
     const botMessage =
       chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
     botMessage.insertAdjacentHTML("beforeend", loading);
@@ -392,9 +262,10 @@ form.addEventListener("submit", (e) => {
       `<div class="message user">${input.value}</div>`
     );
     const value = input.value.toLocaleLowerCase();
-    // i = 15;
-    // end = true;
+    i = 15;
+    end = true;
     if (i == 0) {
+      fadeOut(btnStart, null, 500);
       chat.classList.remove("init");
       selectAsk(value);
       input.removeAttribute("readonly");
