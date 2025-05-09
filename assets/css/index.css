@@ -6,8 +6,10 @@
   font-family: sans-serif;
   scroll-behavior: smooth;
   text-decoration: none;
-  @media (max-width: 991px) {
-    scroll-behavior: unset;
+}
+@supports (-webkit-overflow-scrolling: touch) {
+  * {
+    -webkit-overflow-scrolling: touch;
   }
 }
 ::-webkit-scrollbar-thumb {
