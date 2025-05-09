@@ -12,7 +12,7 @@
     -webkit-overflow-scrolling: touch;
   }
   .chat {
-    max-height: calc(90% - 116px - 77px);
+    max-height: calc(90% - 116px - 77px) !important;
   }
 }
 ::-webkit-scrollbar-thumb {
