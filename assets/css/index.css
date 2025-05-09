@@ -133,7 +133,7 @@ body {
       line-height: 1.2;
       @media (max-width: 991px) {
         padding: 10px 10px;
-        height: calc(100vh / 2);
+        height: calc(100vh / 3);
       }
       .btnStart {
         width: auto;
