@@ -7,9 +7,12 @@
   scroll-behavior: smooth;
   text-decoration: none;
 }
-@supports (-webkit-overflow-scrolling: touch) {
+@supports (-webkit-overflow-scrolling: touch) and (not (-ms-accelerator: true)) {
   * {
     -webkit-overflow-scrolling: touch;
+  }
+  .chat {
+    max-height: calc(90% - 116px - 77px);
   }
 }
 ::-webkit-scrollbar-thumb {
@@ -122,7 +125,6 @@ body {
       overflow: auto;
       display: flex;
       max-height: calc(100% - 116px - 77px);
-      /* height: calc(100vh - 116px - 77px); */
       border-radius: 5px 5px 0 0;
       flex-direction: column;
       gap: 10px;
