@@ -98,9 +98,6 @@ body {
           filter: brightness(1);
         }
       }
-      @media (max-width: 991px) {
-        height: calc(100vh / 5);
-      }
     }
     .btnRestart {
       width: auto;
@@ -117,9 +114,6 @@ body {
       &:hover {
         filter: brightness(1);
       }
-      @media (max-width: 991px) {
-        height: calc(100vh / 5);
-      }
     }
     .chat {
       width: 100%;
@@ -133,7 +127,6 @@ body {
       line-height: 1.2;
       @media (max-width: 991px) {
         padding: 10px 10px;
-        height: calc(100vh / 3);
       }
       .btnStart {
         width: auto;
@@ -280,9 +273,6 @@ body {
         rgba(228, 228, 228, 0.28) -54.55%,
         #ffffff 111.74%
       );
-      @media (max-width: 991px) {
-        height: calc(100vh / 5);
-      }
       #askForm {
         width: 100%;
         position: relative;
