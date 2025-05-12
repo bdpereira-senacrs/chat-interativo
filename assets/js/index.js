@@ -5,6 +5,7 @@ import { fadeIn, fadeOut } from "./animations/index.js";
 const like = "./assets/imgs/thumbs-up-regular.svg";
 const deslike = "./assets/imgs/thumbs-down-regular.svg";
 
+const body = document.querySelector("body");
 const btnStart = document.querySelector(".btnStart");
 const form = document.querySelector("#askForm");
 const chat = document.querySelector(".chat");
@@ -24,6 +25,10 @@ let desc = true,
   end = false,
   endGame = false;
 const answers = ["a", "b", "c", "d"];
+
+const visualPortHeight = window.innerHeight;
+
+body.style.height = `${visualPortHeight}px`;
 
 fadeIn(logo, null, 1000);
 
