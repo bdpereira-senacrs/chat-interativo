@@ -88,6 +88,14 @@ body {
           #fff;
       }
     }
+    @media (max-width: 991px) {
+      &.girl {
+        background-size: 75%, cover, cover !important;
+      }
+      &.boy {
+        background-size: 65%, cover, cover !important;
+      }
+    }
   }
   .containerDialog {
     width: 100%;
