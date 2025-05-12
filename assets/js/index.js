@@ -41,8 +41,7 @@ const getRandomPerson = () => {
 const getRandomColor = () => {
   return color[getRandomInt(color.length)];
 };
-
-const heights = {
+let heights = {
   header: header.offsetHeight,
   ask: ask.offsetHeight,
   visualPortHeight: window.visualViewport.height,
@@ -53,6 +52,19 @@ let teste =
   heights.visualPortHeight * 0.25 -
   (heights.header + heights.ask);
 chat.style.height = `${teste}px`;
+window.addEventListener("resize", (e) => {
+  heights = {
+    header: header.offsetHeight,
+    ask: ask.offsetHeight,
+    visualPortHeight: window.visualViewport.height,
+  };
+  body.style.height = `${heights.visualPortHeight}px`;
+  let teste =
+    heights.visualPortHeight -
+    heights.visualPortHeight * 0.25 -
+    (heights.header + heights.ask);
+  chat.style.height = `${teste}px`;
+});
 
 fadeIn(logo, null, 1000);
 
