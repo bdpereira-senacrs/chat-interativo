@@ -91,7 +91,7 @@ const endChat = () => {
     str = `<p>De acordo com suas respostas, os cursos mais indicados são:</p>`;
   str += `<h3>${j + 1}º - 🚀 <a target="_blank" href="${auxCourses[j].link}">${
     auxCourses[j].name
-  }</a> 🚀</h3>`;
+  }</a> 🚀 - ${Math.floor((auxCourses[j].score / quiz.length) * 100)}%</h3>`;
   str += `${auxCourses[j].video}`;
   str += `<p>${auxCourses[j].desc}</p>`;
   str += `<a class="link btnAnim" target="_blank" href="${auxCourses[j].link}">👉 Acessar ${auxCourses[j].name} 👈</a>`;
