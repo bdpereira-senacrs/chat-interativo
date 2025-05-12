@@ -347,7 +347,11 @@ body {
 }
 
 .d-none {
-  display: none;
+  display: none !important;
+}
+.o-none {
+  opacity: 0;
+  display: flex !important;
 }
 
 .writer {

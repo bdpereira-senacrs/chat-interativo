@@ -18,27 +18,35 @@ const animateConfig = {
   easing: "ease-in-out",
 };
 
-export const fadeIn = (el, compare = null, delay = 500) => {
+export const fadeIn = (el, compare = null, delay = 500, scroll = null) => {
   animateConfig.duration = delay;
   animateConfig.direction = "normal";
   el.classList.remove("d-none");
   if (!compare) {
     el.animate(animate, animateConfig);
   } else {
-    compare.addEventListener("animateend", (e) => {
+    compare.addEventListener("animationend", (e) => {
       el.animate(animate, animateConfig);
     });
   }
+  if (scroll)
+    el.addEventListener("animationend", (e) =>
+      scroll.scrollTo(0, scroll.scrollHeight)
+    );
 };
 
-export const fadeOut = (el, compare = null, delay = 500) => {
+export const fadeOut = (el, compare = null, delay = 500, scroll = null) => {
   animateConfig.duration = delay;
   animateConfig.direction = "reverse";
   if (!compare) {
     el.animate(animate, animateConfig);
   } else {
-    compare.addEventListener("animateend", (e) => {
+    compare.addEventListener("animationend", (e) => {
       el.animate(animate, animateConfig);
     });
   }
+  if (scroll)
+    el.addEventListener("animationend", (e) =>
+      scroll.scrollTo(0, scroll.scrollHeight)
+    );
 };

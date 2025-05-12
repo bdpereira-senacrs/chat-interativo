@@ -52,6 +52,7 @@ let teste =
   heights.visualPortHeight * 0.25 -
   (heights.header + heights.ask);
 chat.style.height = `${teste}px`;
+
 window.addEventListener("resize", (e) => {
   heights = {
     header: header.offsetHeight,
@@ -61,7 +62,7 @@ window.addEventListener("resize", (e) => {
   body.style.height = `${heights.visualPortHeight}px`;
   let teste =
     heights.visualPortHeight -
-    heights.visualPortHeight * 0.25 -
+    heights.visualPortHeight * 0.1 -
     (heights.header + heights.ask);
   chat.style.height = `${teste}px`;
 });
@@ -107,18 +108,24 @@ const endChat = () => {
   str += `${auxCourses[j].video}`;
   str += `<p>${auxCourses[j].desc}</p>`;
   str += `<a class="link btnAnim" target="_blank" href="${auxCourses[j].link}">👉 Acessar ${auxCourses[j].name} 👈</a>`;
-  chat.insertAdjacentHTML("beforeend", `<div class="message bot end"></div>`);
+  chat.insertAdjacentHTML(
+    "beforeend",
+    `<div class="message bot end o-none"></div>`
+  );
   const botMessage =
     chat.querySelectorAll(".bot")[chat.querySelectorAll(".bot").length - 1];
-  botMessage.insertAdjacentHTML("beforeend", loading);
-  botMessage.classList.add("loading");
-  const loadingEl = botMessage.querySelector(".writer");
-  loadingEl.addEventListener("animationend", (e) => {
-    botMessage.classList.remove("loading");
-
-    typewriterEffect(botMessage, str, 10);
-    if (j == 2) endGame = true;
-  });
+  botMessage.insertAdjacentHTML("beforeend", str);
+  fadeIn(botMessage, null, 1000, chat);
+  chat.scrollTo(0, chat.scrollHeight);
+  j++;
+  setTimeout(() => {
+    if (j < 3) {
+      endChat();
+    }
+    if (j == 2) {
+      fadeIn(restartGame, null, 1000);
+    }
+  }, 2000);
 };
 
 const typewriterEffect = (element, str, speed = 50) => {
@@ -170,19 +177,6 @@ const typewriterEffect = (element, str, speed = 50) => {
         desc = false;
         fadeIn(btnSenac, null, 1000);
         selectAsk(" ", false);
-      }
-      if (end) {
-        fadeIn(
-          botMessages[botMessages.length - 1].querySelector("iframe"),
-          null,
-          1000,
-          chat
-        );
-        j++;
-        if (j < 3) endChat();
-      }
-      if (endGame) {
-        fadeIn(restartGame, null, 1000);
       }
       k = 0;
       chat.scrollTo(0, chat.scrollHeight);
