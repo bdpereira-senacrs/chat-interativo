@@ -5,7 +5,11 @@ import { fadeIn, fadeOut } from "./animations/index.js";
 const like = "./assets/imgs/thumbs-up-regular.svg";
 const deslike = "./assets/imgs/thumbs-down-regular.svg";
 
+const person = ["boy", "girl"];
+const color = ["blue", "orange"];
+
 const body = document.querySelector("body");
+const container = document.querySelector(".container");
 const btnStart = document.querySelector(".btnStart");
 const form = document.querySelector("#askForm");
 const ask = document.querySelector(".ask");
@@ -28,6 +32,16 @@ let desc = true,
   endGame = false;
 const answers = ["a", "b", "c", "d"];
 
+const getRandomInt = (max) => {
+  return Math.floor(Math.random() * max);
+};
+const getRandomPerson = () => {
+  return person[getRandomInt(person.length)];
+};
+const getRandomColor = () => {
+  return color[getRandomInt(color.length)];
+};
+
 const heights = {
   header: header.offsetHeight,
   ask: ask.offsetHeight,
@@ -45,6 +59,9 @@ fadeIn(logo, null, 1000);
 fadeIn(initMessage, null, 2000);
 
 fadeIn(form, null, 3000);
+
+container.classList.add(`${getRandomPerson()}`);
+container.classList.add(`${getRandomColor()}`);
 
 restartGame.addEventListener("click", (e) => {
   location.reload();
@@ -282,6 +299,7 @@ form.addEventListener("submit", (e) => {
     if (i == 0) {
       fadeOut(btnStart, null, 500);
       chat.classList.remove("init");
+      container.classList.remove("init");
       selectAsk(value);
       input.removeAttribute("readonly");
     } else if (answers.includes(value) && value != "" && !end) {
@@ -295,6 +313,5 @@ form.addEventListener("submit", (e) => {
     }
     chat.scrollTo(0, chat.scrollHeight);
     input.value = "";
-    input.focus();
   }
 });
