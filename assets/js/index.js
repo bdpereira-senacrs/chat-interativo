@@ -8,9 +8,11 @@ const deslike = "./assets/imgs/thumbs-down-regular.svg";
 const body = document.querySelector("body");
 const btnStart = document.querySelector(".btnStart");
 const form = document.querySelector("#askForm");
+const ask = document.querySelector(".ask");
 const chat = document.querySelector(".chat");
 const input = form.querySelector(".field");
 const send = form.querySelector(".send");
+const header = document.querySelector(".header");
 const btnSenac = document.querySelector(".header .link");
 const restartGame = document.querySelector(".btnRestart");
 const loading = '<div class="writer"></div>';
@@ -26,10 +28,17 @@ let desc = true,
   endGame = false;
 const answers = ["a", "b", "c", "d"];
 
-const visualPortHeight = window.visualViewport.height;
-console.log(window);
-
-body.style.height = `${visualPortHeight}px`;
+const heights = {
+  header: header.offsetHeight,
+  ask: ask.offsetHeight,
+  visualPortHeight: window.visualViewport.height,
+};
+body.style.height = `${heights.visualPortHeight}px`;
+let teste =
+  heights.visualPortHeight -
+  heights.visualPortHeight * 0.25 -
+  (heights.header + heights.ask);
+chat.style.height = `${teste}px`;
 
 fadeIn(logo, null, 1000);
 
