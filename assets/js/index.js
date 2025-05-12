@@ -26,7 +26,8 @@ let desc = true,
   endGame = false;
 const answers = ["a", "b", "c", "d"];
 
-const visualPortHeight = window.innerHeight;
+const visualPortHeight = window.visualViewport.height;
+console.log(window);
 
 body.style.height = `${visualPortHeight}px`;
 
